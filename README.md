@@ -1,1 +1,1 @@
-# Rutskiy_QA_Test
+# etarqa17_Class
