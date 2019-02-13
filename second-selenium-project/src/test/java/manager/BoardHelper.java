@@ -18,6 +18,13 @@ public class BoardHelper extends  HelperBase {
 
   }
 
+  public int PersonalBoardsCount(){
+    WebElement personalBoards =
+            wd.findElement(By.xpath("//*[@class='icon-lg icon-member']/../../.."));
+    return
+            personalBoards.findElements(By.xpath(".//*[@class='boards-page-board-section-list-item']")).size()-1;
+  }
+
   public void addBoardTitle(String boardName) {
     type(By.cssSelector("input.subtle-input"), boardName);
   }
@@ -30,16 +37,19 @@ public class BoardHelper extends  HelperBase {
     click(By.cssSelector(".js-new-board"));
   }
 
-  public void clickTheSelectTeamForCreatingBoard() {
-    click(By.cssSelector(".org-chooser-trigger"));
-    click(By.xpath("//ul[contains(@class,'org-chooser')]//li[3]"));
+  public void clickFirstBoard() {
+    click(By.xpath("//*[@class='icon-lg icon-member']/../../..//*[@class='boards-page-board-section-list-item'][1]"));
   }
 
-  public void clickSelectVisibleBoardForCreatingBoard() {
-    click(By.cssSelector(".vis-chooser-trigger"));
+  public void clickMoreInsideBoard() {
+    click(By.xpath("//span[@class='icon-sm icon-overflow-menu-horizontal board-menu-navigation-item-link-icon']"));
   }
 
-  public void chooseVisibleBoard() {
-    click(By.xpath("//span[text()='Private']/.."));
+  public void clickCloseBoard() {
+    click(By.xpath("//a[@class=\'board-menu-navigation-item-link js-close-board\']"));
+  }
+
+  public void submitCloseBoard() {
+    click(By.xpath("//input[@value='Close']"));
   }
 }
