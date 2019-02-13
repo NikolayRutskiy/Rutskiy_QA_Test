@@ -8,6 +8,12 @@ public class BoardDeletionTest extends TestBase {
     public void ensurePreconditions() {
         if (!app.getSessionHelper().isUserLoggedIn()) {
             app.getSessionHelper().login();
+            if (app.getBoardHelper().PersonalBoardsCount()==0)
+            {
+                app.getBoardHelper().clickTheCreateNewBoardOnTheEndOfList();
+                app.getBoardHelper().addBoardTitle("newBoard" + System.currentTimeMillis());
+                app.getBoardHelper().clickTheCreateButton();
+            }
         }
     }
     @Test
