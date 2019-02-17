@@ -56,4 +56,13 @@ public class BoardHelper extends  HelperBase {
   public void clickMenuButton() {
     click(By.xpath("//span[text()='Show Menu']"));
   }
+
+    public boolean isMoreButtonIsVisible() {
+      return isElementPresent(By.xpath("//span[@class='icon-sm icon-overflow-menu-horizontal board-menu-navigation-item-link-icon']"));
+    }
+  public void createSimpleBoard() {
+    clickTheCreateNewBoardOnTheEndOfList();
+    addBoardTitle("newBoard" + System.currentTimeMillis());
+    clickTheCreateButton();
+  }
 }

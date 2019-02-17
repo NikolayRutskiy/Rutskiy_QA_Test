@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -10,19 +11,25 @@ public class BoardDeletionTest extends TestBase {
             app.getSessionHelper().login();
             if (app.getBoardHelper().PersonalBoardsCount()==0)
             {
-               app.getBoardHelper().clickTheCreateNewBoardOnTheEndOfList();
-                app.getBoardHelper().addBoardTitle("newBoard" + System.currentTimeMillis());
-                app.getBoardHelper().clickTheCreateButton();
-           }
+                app.getBoardHelper().createSimpleBoard();
+            }
         }
     }
+
+
+
     @Test
     public void deleteFirstBoard()
     {
+        int before = app.getBoardHelper().PersonalBoardsCount();
         app.getBoardHelper().clickFirstBoard();
-        app.getBoardHelper().clickMenuButton();
+        if(!app.getBoardHelper().isMoreButtonIsVisible()) {
+            app.getBoardHelper().clickMenuButton();
+        }
         app.getBoardHelper().clickMoreInsideBoard();
         app.getBoardHelper().clickCloseBoard();
         app.getBoardHelper().submitCloseBoard();
+        int after = app.getBoardHelper().PersonalBoardsCount();
+        Assert.assertEquals(after, before-1);
     }
 }
