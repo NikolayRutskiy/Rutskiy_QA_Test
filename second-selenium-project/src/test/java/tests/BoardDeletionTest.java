@@ -10,16 +10,17 @@ public class BoardDeletionTest extends TestBase {
             app.getSessionHelper().login();
             if (app.getBoardHelper().PersonalBoardsCount()==0)
             {
-                app.getBoardHelper().clickTheCreateNewBoardOnTheEndOfList();
+               app.getBoardHelper().clickTheCreateNewBoardOnTheEndOfList();
                 app.getBoardHelper().addBoardTitle("newBoard" + System.currentTimeMillis());
                 app.getBoardHelper().clickTheCreateButton();
-            }
+           }
         }
     }
     @Test
     public void deleteFirstBoard()
     {
         app.getBoardHelper().clickFirstBoard();
+        app.getBoardHelper().clickMenuButton();
         app.getBoardHelper().clickMoreInsideBoard();
         app.getBoardHelper().clickCloseBoard();
         app.getBoardHelper().submitCloseBoard();

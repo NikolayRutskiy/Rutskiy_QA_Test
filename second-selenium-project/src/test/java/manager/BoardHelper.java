@@ -52,4 +52,8 @@ public class BoardHelper extends  HelperBase {
   public void submitCloseBoard() {
     click(By.xpath("//input[@value='Close']"));
   }
+
+  public void clickMenuButton() {
+    click(By.xpath("//span[text()='Show Menu']"));
+  }
 }
