@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.LogoutTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-02-18T14:00:57" hostname="DESKTOP-LIU3TUS" time="9.875">
+  <properties/>
+  <testcase name="testLogout" classname="tests.LogoutTest" time="9.875"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

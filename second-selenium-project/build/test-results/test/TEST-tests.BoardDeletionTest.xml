@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.BoardDeletionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-02-18T14:00:51" hostname="DESKTOP-LIU3TUS" time="3.701">
+  <properties/>
+  <testcase name="deleteFirstBoard" classname="tests.BoardDeletionTest" time="3.701"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

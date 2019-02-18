@@ -65,4 +65,8 @@ public class BoardHelper extends  HelperBase {
     addBoardTitle("newBoard" + System.currentTimeMillis());
     clickTheCreateButton();
   }
+
+  public void returnToMainPage() {
+    click(By.xpath("//span[@class='header-btn-icon icon-lg icon-house light']"));
+  }
 }
