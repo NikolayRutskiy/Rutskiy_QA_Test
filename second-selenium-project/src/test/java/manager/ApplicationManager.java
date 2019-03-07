@@ -17,6 +17,7 @@ public class ApplicationManager {
   BoardHelper boardHelper;
   TeamHelper teamHelper;
   EventFiringWebDriver wd;
+  NavigationHelper navigationHelper;
   String browser;
 
   public ApplicationManager(String browser) {
@@ -40,6 +41,7 @@ public class ApplicationManager {
     sessionHelper = new SessionHelper(wd);
     boardHelper = new BoardHelper(wd);
     teamHelper = new TeamHelper(wd);
+    navigationHelper = new NavigationHelper(wd);
   }
 
   public void stop() {
@@ -51,9 +53,7 @@ public class ApplicationManager {
   }
 
 
-  public void returnToPreviousPage() {
-    wd.navigate().back();
-  }
+
 
   public void clickOnPlusButtonOnHeader() {
     boardHelper.click(By.cssSelector("div.header-user .icon-add"));
@@ -69,5 +69,9 @@ public class ApplicationManager {
 
   public SessionHelper getSessionHelper() {
     return sessionHelper;
+  }
+
+  public NavigationHelper getNavigationHelper() {
+    return navigationHelper;
   }
 }
